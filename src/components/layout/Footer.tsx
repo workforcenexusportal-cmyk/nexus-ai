@@ -116,8 +116,8 @@ export default function Footer() {
                 {section.title}
               </h4>
               <ul className="space-y-2.5">
-                {section.links.map((link) => (
-                  <li key={link.href}>
+                {section.links.map((link, index) => (
+                  <li key={`${section.title}-${link.href}-${index}`}>
                     <Link
                       href={link.href}
                       className="text-sm text-nexus-secondary hover:text-nexus-accent transition-colors inline-flex items-center gap-1 group"
