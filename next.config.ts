@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  output: "standalone",
   async headers() {
     return [{ source: "/(.*)", headers: [
       { key: "X-Content-Type-Options", value: "nosniff" },
