@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Nexus AI Custom Colors */
+  --color-nexus-bg: #050816;
+  --color-nexus-card: #0E1424;
+  --color-nexus-accent: #56CCF2;
+  --color-nexus-accent2: #00FFA3;
+  --color-nexus-text: #FFFFFF;
+  --color-nexus-secondary: #9AA4B2;
+  --color-nexus-border: #1A2236;
+  --color-nexus-glow: #56CCF233;
+  --color-nexus-glow2: #00FFA333;
+  --color-nexus-surface: #0A0F1E;
+}
+
+:root {
+  --background: #050816;
+  --foreground: #FFFFFF;
+  --card: #0E1424;
+  --card-foreground: #FFFFFF;
+  --popover: #0E1424;
+  --popover-foreground: #FFFFFF;
+  --primary: #56CCF2;
+  --primary-foreground: #050816;
+  --secondary: #1A2236;
+  --secondary-foreground: #FFFFFF;
+  --muted: #0E1424;
+  --muted-foreground: #9AA4B2;
+  --accent: #00FFA3;
+  --accent-foreground: #050816;
+  --destructive: #FF4444;
+  --border: #1A2236;
+  --input: #1A2236;
+  --ring: #56CCF2;
+  --chart-1: #56CCF2;
+  --chart-2: #00FFA3;
+  --chart-3: #A78BFA;
+  --chart-4: #F472B6;
+  --chart-5: #FBBF24;
+  --radius: 0.75rem;
+  --sidebar: #0A0F1E;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #56CCF2;
+  --sidebar-primary-foreground: #050816;
+  --sidebar-accent: #1A2236;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #1A2236;
+  --sidebar-ring: #56CCF2;
+}
+
+.dark {
+  --background: #050816;
+  --foreground: #FFFFFF;
+  --card: #0E1424;
+  --card-foreground: #FFFFFF;
+  --popover: #0E1424;
+  --popover-foreground: #FFFFFF;
+  --primary: #56CCF2;
+  --primary-foreground: #050816;
+  --secondary: #1A2236;
+  --secondary-foreground: #FFFFFF;
+  --muted: #0E1424;
+  --muted-foreground: #9AA4B2;
+  --accent: #00FFA3;
+  --accent-foreground: #050816;
+  --destructive: #FF4444;
+  --border: #1A2236;
+  --input: #1A2236;
+  --ring: #56CCF2;
+  --chart-1: #56CCF2;
+  --chart-2: #00FFA3;
+  --chart-3: #A78BFA;
+  --chart-4: #F472B6;
+  --chart-5: #FBBF24;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-nexus-bg text-nexus-text antialiased;
+    background-image: radial-gradient(circle at 50% -20%, rgba(86, 204, 242, 0.10), transparent 34rem), radial-gradient(circle at 90% 40%, rgba(0, 255, 163, 0.05), transparent 28rem);
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-nexus-accent to-nexus-accent2 bg-clip-text text-transparent;
+  }
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent;
+  }
+  .bg-glass {
+    @apply bg-nexus-card/60 backdrop-blur-xl border border-nexus-border/50;
+  }
+  .bg-glass-light {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .hairline {
+    background: linear-gradient(90deg, transparent, rgba(86, 204, 242, 0.45), transparent);
+  }
+  .glow-accent {
+    box-shadow: 0 0 30px #56CCF220, 0 0 60px #56CCF210;
+  }
+  .glow-accent2 {
+    box-shadow: 0 0 30px #00FFA320, 0 0 60px #00FFA310;
+  }
+  .glow-text {
+    text-shadow: 0 0 20px #56CCF240;
+  }
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(86, 204, 242, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(86, 204, 242, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A2236;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #56CCF2;
+}
+
+/* Selection */
+::selection {
+  background: #56CCF240;
+  color: #FFFFFF;
+}

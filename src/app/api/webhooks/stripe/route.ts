@@ -1,0 +1,2 @@
+export const dynamic = "force-dynamic";
+export async function POST(request: Request) { const signature = request.headers.get("stripe-signature"); if (!signature && process.env.STRIPE_WEBHOOK_SECRET) return Response.json({ error: "SIGNATURE_REQUIRED" }, { status: 400 }); const payload = await request.text(); return Response.json({ received: true, bytes: payload.length, verified: Boolean(signature), message: "Implement Stripe signature verification before enabling production billing." }); }

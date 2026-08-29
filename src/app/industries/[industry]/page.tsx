@@ -1,0 +1,9 @@
+import { notFound } from "next/navigation";
+import PlatformPage from "@/components/shared/PlatformPage";
+const data = {
+  manufacturing: { eyebrow: "Manufacturing intelligence", title: "A smarter factory starts with", highlight: "better decisions.", description: "Connect production, quality, maintenance, and planning into one intelligent operating picture.", icon: "factory" as const },
+  engineering: { eyebrow: "Engineering intelligence", title: "Give every engineer more", highlight: "time to create.", description: "Make technical knowledge searchable, automate documentation, and accelerate design decisions without compromising rigor.", icon: "engineering" as const },
+  logistics: { eyebrow: "Logistics intelligence", title: "Move goods with", highlight: "more certainty.", description: "Anticipate disruption, automate coordination, and give every team a live view of the supply chain.", icon: "logistics" as const },
+};
+export function generateStaticParams() { return Object.keys(data).map(industry => ({ industry })); }
+export default async function IndustryPage({ params }: { params: Promise<{ industry: string }> }) { const { industry } = await params; const page = data[industry as keyof typeof data]; if (!page) notFound(); return <PlatformPage {...page} metrics={[{ value: "45%", label: "less downtime" }, { value: "3x", label: "faster decisions" }, { value: "30%", label: "lower logistics cost" }, { value: "24/7", label: "operational visibility" }]} sections={[{ title: "Connect the operation", description: "Bring data and decisions together across the systems your teams already use.", bullets: ["ERP and MES signals", "Human expertise and context", "Live exception management"] }, { title: "Scale what works", description: "Prove value in one workflow, then reuse the intelligence across sites, teams, and regions.", bullets: ["Repeatable playbooks", "Governed deployment", "Outcome measurement"] }]} />; }

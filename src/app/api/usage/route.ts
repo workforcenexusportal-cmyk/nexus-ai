@@ -1,0 +1,3 @@
+import { getTenantContext, listUsage, requireRole } from "@/lib/backend";
+export const dynamic = "force-dynamic";
+export async function GET(request: Request) { try { const context = getTenantContext(request); requireRole(context, ["owner", "admin"]); const data = listUsage(context); return Response.json({ data, totals: { estimatedCost: data.reduce((total, event) => total + event.estimatedCost, 0), inputTokens: data.reduce((total, event) => total + event.inputTokens, 0), outputTokens: data.reduce((total, event) => total + event.outputTokens, 0) } }); } catch (error) { return Response.json({ error: error instanceof Error ? error.message : "FORBIDDEN" }, { status: 403 }); } }
