@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   robots: { index: true, follow: true },
-  metadataBase: new URL("https://nexus-ai.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
 };
 
 export default function RootLayout({

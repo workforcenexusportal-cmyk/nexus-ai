@@ -12,6 +12,7 @@ interface ButtonProps {
   className?: string;
   showArrow?: boolean;
   onClick?: () => void;
+  type?: "button" | "submit" | "reset";
 }
 
 export default function Button({
@@ -22,6 +23,7 @@ export default function Button({
   className = "",
   showArrow = false,
   onClick,
+  type = "button",
 }: ButtonProps) {
   const variants = {
     primary:
@@ -51,7 +53,7 @@ export default function Button({
   }
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} className={classes}>
       {children}
       {showArrow && <ArrowRight className="w-4 h-4" />}
     </button>

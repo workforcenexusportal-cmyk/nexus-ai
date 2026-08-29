@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight, Check, Sparkles, ShieldCheck, Zap, Bot, Factory, Wrench, Truck, FileText, BarChart3, Workflow, BookOpen, Users, LockKeyhole } from "lucide-react";
 import Badge from "@/components/shared/Badge";
 import Button from "@/components/shared/Button";

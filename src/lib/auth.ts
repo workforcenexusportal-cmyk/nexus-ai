@@ -1,0 +1,5 @@
+import type { Role, TenantContext } from "@/lib/backend";
+import NextAuth from "next-auth";
+import { authOptions } from "@/auth";
+export async function sessionContext(request: Request): Promise<TenantContext> { const session = await NextAuth(authOptions).auth(); if (session?.user?.tenantId) { const role = (session.user.role ?? "viewer") as Role; return { tenantId: session.user.tenantId, userId: session.user.id, roles: [role] }; } if (process.env.NODE_ENV === "production") return { tenantId: "", userId: "anonymous", roles: [] }; const tenantId = request.headers.get("x-tenant-id") ?? request.headers.get("cookie")?.match(/(?:^|;\s*)nexus-tenant=([^;]+)/)?.[1] ?? "public-demo"; const userId = request.headers.get("x-user-id") ?? "anonymous"; const roles = (request.headers.get("x-roles") ?? "viewer").split(",").filter((role): role is Role => ["owner", "admin", "operator", "viewer"].includes(role)); return { tenantId, userId, roles: roles.length ? roles : ["viewer"] }; }
+export function authConfigured() { return Boolean(process.env.AUTH_SECRET); }

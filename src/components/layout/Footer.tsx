@@ -57,7 +57,7 @@ const footerSections = [
       { label: "Careers", href: "/careers" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
-      { label: "Open Platform", href: "/book-demo" },
+      { label: "Open Platform", href: "/client-portal" },
       { label: "Partnerships", href: "/partnerships" },
       { label: "Investors", href: "/investors" },
     ],

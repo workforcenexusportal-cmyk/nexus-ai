@@ -188,7 +188,7 @@ export default function Navbar() {
               Control Plane
             </Link>
             <Link
-              href="/book-demo"
+              href="/client-portal"
               className="px-5 py-2.5 text-sm font-medium bg-gradient-to-r from-nexus-accent to-nexus-accent2 text-nexus-bg rounded-xl hover:opacity-90 transition-opacity glow-accent"
             >
               Open Platform
@@ -249,7 +249,7 @@ export default function Navbar() {
                   Control Plane
                 </Link>
                 <Link
-                  href="/book-demo"
+                  href="/client-portal"
                   onClick={() => setIsOpen(false)}
                   className="block px-4 py-3 bg-gradient-to-r from-nexus-accent to-nexus-accent2 text-nexus-bg rounded-xl text-center font-medium"
                 >

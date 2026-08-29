@@ -141,7 +141,7 @@ export default function AboutPage() {
               <span className="text-gradient">Industrial Intelligence</span>
             </h1>
             <p className="text-xl text-nexus-secondary leading-relaxed">
-              We're a team of AI researchers, engineers, and industry veterans
+              We&apos;re a team of AI researchers, engineers, and industry veterans
               on a mission to make enterprise AI automation accessible, reliable,
               and transformative.
             </p>
@@ -287,7 +287,7 @@ export default function AboutPage() {
               Want to <span className="text-gradient">Join Us</span>?
             </h2>
             <p className="text-nexus-secondary text-lg mb-8 max-w-2xl mx-auto">
-              We're always looking for exceptional people who share our passion
+              We&apos;re always looking for exceptional people who share our passion
               for AI and industrial innovation.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
