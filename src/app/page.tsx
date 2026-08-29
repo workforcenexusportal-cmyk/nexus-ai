@@ -93,7 +93,7 @@ function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button href="/book-demo" size="lg" showArrow>
-              Book a strategy session
+              Start building with Nexus
             </Button>
             <Button href="/case-studies" variant="secondary" size="lg" showArrow>
               Explore the platform
@@ -914,10 +914,10 @@ function FinalCTA() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/book-demo" size="lg" showArrow>
-              Book a strategy session
+              Start building with Nexus
             </Button>
             <Button href="/contact" variant="secondary" size="lg">
-              Talk to an expert
+              Explore the platform
             </Button>
           </div>
         </AnimatedSection>

@@ -57,7 +57,7 @@ const footerSections = [
       { label: "Careers", href: "/careers" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
-      { label: "Book Demo", href: "/book-demo" },
+      { label: "Open Platform", href: "/book-demo" },
       { label: "Partnerships", href: "/partnerships" },
       { label: "Investors", href: "/investors" },
     ],
@@ -88,12 +88,11 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16 pb-12 border-b border-nexus-border/50">
           <div>
             <h3 className="text-2xl font-bold mb-2">
-              Stay ahead of the{" "}
-              <span className="text-gradient">AI revolution</span>
+              Build ahead of the{" "}
+              <span className="text-gradient">automation curve</span>
             </h3>
             <p className="text-nexus-secondary">
-              Get weekly insights on AI automation, industry trends, and
-              exclusive early access to new features.
+              Build notes, product updates, and practical automation patterns for independent operators.
             </p>
           </div>
           <div className="flex w-full lg:w-auto gap-3">
